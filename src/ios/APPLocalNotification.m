@@ -77,18 +77,6 @@
 
             notification = [[UILocalNotification alloc]
                             initWithOptions:options];
-                            
-            //quickfix for apple watch                
-            if ([notification respondsToSelector:@selector(alertTitle)])
-            {
-                notification.alertTitle = [notifications objectForKey:@"title"];
-            }
-            if ([notification respondsToSelector:@selector(category)])
-            {
-                notification.category = [notifications objectForKey:@"category"];
-            }
-            notification.alertBody = [notifications objectForKey:@"body"];
-            //end apple watch fix 
             
             [self scheduleLocalNotification:[notification copy]];
             [self fireEvent:@"schedule" notification:notification];
