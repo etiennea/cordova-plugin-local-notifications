@@ -33,6 +33,8 @@ var exec    = require('cordova/exec'),
 exports._defaults = {
     text:  '',
     title: '',
+    body: '',
+    category: 'myDefault',
     sound: 'res://platform_default',
     badge: 0,
     id:    0,
@@ -146,7 +148,15 @@ exports.convertProperties = function (options) {
     if (options.text) {
         options.text  = options.text.toString();
     }
-
+    
+    if (options.body) {
+        options.body  = options.body.toString();
+    }
+    
+    if (options.category) {
+        options.category  = options.category.toString();
+    }
+    
     if (options.badge) {
         if (isNaN(options.badge)) {
             options.badge = this.getDefaults().badge;
