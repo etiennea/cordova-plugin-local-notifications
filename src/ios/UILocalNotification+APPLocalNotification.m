@@ -65,6 +65,17 @@ NSInteger const APPLocalNotificationTypeTriggered = 2;
     self.alertBody = options.alertBody;
     self.soundName = options.soundName;
 
+    //quickfix for apple watch
+    if ([self respondsToSelector:@selector(alertTitle)])
+    {
+        [self setValue:options.alertTitle forKey:@"alertTitle"];
+    }
+    if ([self respondsToSelector:@selector(category)])
+    {
+        [self setValue:options.category forKey:@"category"];
+    }
+    //end apple watch fix
+    
     if ([self wasInThePast]) {
         self.fireDate = [NSDate date];
     }
