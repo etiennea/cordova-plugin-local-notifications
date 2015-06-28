@@ -83,6 +83,22 @@ NSString* const DEFAULT_SOUND = @"res://platform_default";
 }
 
 /**
+ * The notification's body (for Apple Watch).
+ */
+- (NSString*) body
+{
+    return [dict objectForKey:@"body"];
+}
+
+/**
+ * The notification's category (for Apple Watch).
+ */
+- (NSString*) category
+{
+    return [dict objectForKey:@"category"];
+}
+
+/**
  * The notification's badge number.
  */
 - (NSInteger) badgeNumber
