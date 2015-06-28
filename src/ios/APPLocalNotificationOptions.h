@@ -33,6 +33,9 @@
 @property (readonly, getter=repeatInterval) NSCalendarUnit repeatInterval;
 @property (readonly, getter=userInfo) NSDictionary* userInfo;
 
+@property (readonly, getter=alertTitle) NSString* alertTitle;
+@property (readonly, getter=category) NSString* category;
+
 // If it's a repeating notification
 - (BOOL) isRepeating;
 
