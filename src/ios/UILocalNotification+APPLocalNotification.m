@@ -64,15 +64,12 @@ NSInteger const APPLocalNotificationTypeTriggered = 2;
     self.repeatInterval = options.repeatInterval;
     self.alertBody = options.alertBody;
     self.soundName = options.soundName;
+    self.category = options.category;
 
     //quickfix for apple watch
     if ([self respondsToSelector:@selector(alertTitle)])
     {
         [self setValue:options.alertTitle forKey:@"alertTitle"];
-    }
-    if ([self respondsToSelector:@selector(category)])
-    {
-        [self setValue:options.category forKey:@"category"];
     }
     //end apple watch fix
     
